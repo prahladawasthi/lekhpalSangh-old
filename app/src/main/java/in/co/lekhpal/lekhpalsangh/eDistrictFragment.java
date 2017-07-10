@@ -17,17 +17,12 @@ import android.widget.Toast;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link LekhpalFragment.OnFragmentInteractionListener} interface
+ * {@link eDistrictFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link LekhpalFragment#newInstance} factory method to
- * <p>
+ * Use the {@link eDistrictFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class LekhpalFragment extends Fragment {
-
-    private WebView webView;
-    private View mContentView;
-
+public class eDistrictFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -37,9 +32,12 @@ public class LekhpalFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private WebView webView;
+    private View mContentView;
+
     private OnFragmentInteractionListener mListener;
 
-    public LekhpalFragment() {
+    public eDistrictFragment() {
         // Required empty public constructor
     }
 
@@ -49,11 +47,11 @@ public class LekhpalFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment LekhpalFragment.
+     * @return A new instance of fragment eDistrictFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static LekhpalFragment newInstance(String param1, String param2) {
-        LekhpalFragment fragment = new LekhpalFragment();
+    public static eDistrictFragment newInstance(String param1, String param2) {
+        eDistrictFragment fragment = new eDistrictFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -73,14 +71,13 @@ public class LekhpalFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        mContentView = inflater.inflate(R.layout.fragment_lekhpal, container, false);
+        mContentView = inflater.inflate(R.layout.fragment_e_district, container, false);
 
         if (!Utils.checkInternetConnection(getContext())) {
             Toast.makeText(getContext(), "No Internet!", Toast.LENGTH_SHORT).show();
         } else {
-            String url = "https://lekhpal.wordpress.com/";
-            webView = (WebView) mContentView.findViewById(R.id.lekhpal);
+            String url = "http://164.100.181.28/edistrict/login/login.aspx";
+            webView = (WebView) mContentView.findViewById(R.id.e_district);
             webView.getSettings().setLoadWithOverviewMode(true);
             webView.getSettings().setUseWideViewPort(true);
             webView.getSettings().setBuiltInZoomControls(true);
@@ -101,7 +98,6 @@ public class LekhpalFragment extends Fragment {
                 }
             });
         }
-
 
         return mContentView;
     }
