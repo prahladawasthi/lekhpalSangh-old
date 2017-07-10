@@ -1,37 +1,48 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="in.co.lekhpal.lekhpalsangh.SecondActivity">
+    tools:context="in.co.lekhpal.lekhpalsangh.HomeFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/app_title"
+            android:layout_width="match_parent"
+            android:layout_height="77dp"
+            android:layout_gravity="top|center"
+            android:layout_weight="0.45"
+            android:text="@string/interstitial_ad_sample"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_marginTop="44dp"
+            android:layout_alignParentTop="true" />
+
+        <TextView
+            android:id="@+id/level"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@+id/app_title"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="top|center"
+            android:layout_marginTop="18dp"
+            android:scaleType="centerInside"
+            android:text="@string/start_level"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/next_level_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/next_level"
+            android:layout_below="@+id/level"
+            android:layout_centerHorizontal="true" />
 
 
-    <!-- view for AdMob Interstitial Ad -->
-    <TextView
-        android:id="@+id/app_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/interstitial_ad_sample"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_above="@+id/level"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="44dp" />
+    </RelativeLayout>
 
-    <TextView
-        android:id="@+id/level"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/start_level"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_above="@+id/next_level_button"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="60dp" />
 
-    <Button
-        android:id="@+id/next_level_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="@string/next_level" />
-</RelativeLayout>
+</ScrollView>

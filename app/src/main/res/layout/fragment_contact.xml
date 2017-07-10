@@ -1,25 +1,69 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="in.co.lekhpal.lekhpalsangh.ContactFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/lekhpal_contact_us"
-        android:id="@+id/textView2"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="66dp" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <Button android:id="@+id/btn_fullscreen_ad"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/title_activity_second"
-        android:layout_marginTop="24dp"
-        android:layout_below="@+id/textView2"
-        android:layout_centerHorizontal="true" />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="77dp"
+            android:layout_gravity="top|center"
+            android:layout_weight="0.45"
+            app:srcCompat="@mipmap/lekhpal"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="12dp" />
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@+id/imageView"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="top|center"
+            android:layout_marginTop="18dp"
+            android:scaleType="centerInside"
+            android:text="@string/lekhpal_title"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/textViewMessage"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:layout_below="@+id/textViewTitle"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="top|center"
+            android:scaleType="centerInside"
+            android:text="@string/lekhpal_contact_us" />
+
+        <Button
+            android:id="@+id/btn_fullscreen_ad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_activity_second"
+            android:layout_below="@+id/textViewMessage"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:id="@+id/textViewTitle1"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_gravity="top|center"
+            android:scaleType="centerInside"
+
+            android:textSize="22sp"
+            android:layout_marginTop="28dp"
+            android:layout_below="@+id/textViewMessage"
+            android:layout_alignLeft="@+id/textViewMessage"
+            android:layout_alignStart="@+id/textViewMessage" />
+    </RelativeLayout>
+
+
+</ScrollView>

@@ -163,11 +163,11 @@ public class MainActivity extends AppCompatActivity
                 title = getString(R.string.lekhpal_edistrict);
                 viewIsAtHome = false;
                 break;
-            case R.id.nav_news:
+           /* case R.id.nav_news:
                 fragment = new NewsFragment();
                 title = getString(R.string.lekhpal_news);
                 viewIsAtHome = false;
-                break;
+                break;*/
             case R.id.nav_contact:
                 fragment = new ContactFragment();
                 title = getString(R.string.lekhpal_title);
