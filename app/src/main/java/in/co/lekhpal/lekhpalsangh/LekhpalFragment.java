@@ -1,6 +1,7 @@
 package in.co.lekhpal.lekhpalsangh;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,9 +9,12 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.JsResult;
+import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 
@@ -27,6 +31,8 @@ public class LekhpalFragment extends Fragment {
 
     private WebView webView;
     private View mContentView;
+    private ProgressBar progressBar;
+    private String url = "https://lekhpal.wordpress.com/";
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -73,13 +79,14 @@ public class LekhpalFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         mContentView = inflater.inflate(R.layout.fragment_lekhpal, container, false);
 
         if (!Utils.checkInternetConnection(getContext())) {
             Toast.makeText(getContext(), "No Internet!", Toast.LENGTH_SHORT).show();
         } else {
-            String url = "https://lekhpal.wordpress.com/";
+
+            progressBar = (ProgressBar) mContentView.findViewById(R.id.progressBar);
+
             webView = (WebView) mContentView.findViewById(R.id.lekhpal);
             webView.getSettings().setLoadWithOverviewMode(true);
             webView.getSettings().setUseWideViewPort(true);
@@ -87,11 +94,13 @@ public class LekhpalFragment extends Fragment {
             webView.getSettings().setDisplayZoomControls(false);
             webView.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
             webView.getSettings().setJavaScriptEnabled(true);
+            webView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
+
             webView.loadUrl(url);
 
             webView.setWebViewClient(new CustomWebViewClient());
-
             webView.setOnKeyListener(new View.OnKeyListener() {
+                @Override
                 public boolean onKey(View v, int keyCode, KeyEvent event) {
                     if ((keyCode == KeyEvent.KEYCODE_BACK) && webView.canGoBack()) {
                         webView.goBack();
@@ -101,7 +110,6 @@ public class LekhpalFragment extends Fragment {
                 }
             });
         }
-
 
         return mContentView;
     }
@@ -139,19 +147,27 @@ public class LekhpalFragment extends Fragment {
             if (!Utils.checkInternetConnection(getContext())) {
                 Toast.makeText(getContext(), "No Internet!", Toast.LENGTH_SHORT).show();
             } else if (url.endsWith(".pdf")) {
+                progressBar.setVisibility(View.VISIBLE);
                 String googleDocs = "https://docs.google.com/viewer?url=";
                 view.loadUrl(googleDocs + url);
 
-            } else if (url.endsWith(".jpg") || url.endsWith(".jpeg")) {
+            } else if (!url.contains("lekhpal.wordpress.com") || url.endsWith(".jpg") || url.endsWith(".jpeg")) {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse(url));
                 startActivity(intent);
                 return true;
             } else {
+                progressBar.setVisibility(View.VISIBLE);
                 view.loadUrl(url);
             }
 
             return true;
+        }
+
+        @Override
+        public void onPageFinished(WebView view, String url) {
+            super.onPageFinished(view, url);
+            progressBar.setVisibility(View.GONE);
         }
     }
 }
