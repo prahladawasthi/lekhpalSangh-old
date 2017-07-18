@@ -158,6 +158,11 @@ public class MainActivity extends AppCompatActivity
                 title = getString(R.string.lekhpal_title);
                 viewIsAtHome = false;
                 break;
+            case R.id.nav_portal:
+                fragment = new PortalFragment();
+                title = getString(R.string.lekhpal_title);
+                viewIsAtHome = false;
+                break;
             case R.id.nav_contact:
                 fragment = new ContactFragment();
                 title = getString(R.string.lekhpal_title);

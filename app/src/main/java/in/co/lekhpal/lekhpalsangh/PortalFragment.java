@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceRequest;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
@@ -20,23 +19,21 @@ import android.widget.Toast;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link LekhpalFragment.OnFragmentInteractionListener} interface
+ * {@link PortalFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link LekhpalFragment#newInstance} factory method to
- * <p>
+ * Use the {@link PortalFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class LekhpalFragment extends Fragment {
-
-    private WebView webView;
-    private View mContentView;
-    private ProgressBar progressBar;
-
-
+public class PortalFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+    private WebView webView;
+    private View mContentView;
+    private ProgressBar progressBar;
+    private String url = "https://lekhpal.cfapps.io/";
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -44,7 +41,7 @@ public class LekhpalFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public LekhpalFragment() {
+    public PortalFragment() {
         // Required empty public constructor
     }
 
@@ -54,11 +51,11 @@ public class LekhpalFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment LekhpalFragment.
+     * @return A new instance of fragment PortalFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static LekhpalFragment newInstance(String param1, String param2) {
-        LekhpalFragment fragment = new LekhpalFragment();
+    public static PortalFragment newInstance(String param1, String param2) {
+        PortalFragment fragment = new PortalFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -79,26 +76,49 @@ public class LekhpalFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        mContentView = inflater.inflate(R.layout.fragment_lekhpal, container, false);
+        mContentView = inflater.inflate(R.layout.fragment_portal, container, false);
 
         if (!Utils.checkInternetConnection(getContext())) {
             Toast.makeText(getContext(), "No Internet!", Toast.LENGTH_SHORT).show();
         } else {
-            this.progressBar = (ProgressBar) mContentView.findViewById(R.id.progressBar);
-            this.webView = (WebView) mContentView.findViewById(R.id.lekhpal);
-            this.webView.getSettings().setLoadWithOverviewMode(true);
-            this.webView.getSettings().setUseWideViewPort(true);
-            this.webView.getSettings().setBuiltInZoomControls(true);
-            this.webView.getSettings().setDisplayZoomControls(false);
-            this.progressBar.setVisibility(View.VISIBLE);
-            this.webView.loadUrl("https://lekhpal.wordpress.com/");
-            this.webView.getSettings().setJavaScriptEnabled(true);
-            this.webView.setWebViewClient(new CustomWebViewClient());
+            progressBar = (ProgressBar) mContentView.findViewById(R.id.progressBar2);
+            webView = (WebView) mContentView.findViewById(R.id.portal);
 
-            //this.webView.setWebViewClient(new CustomWebViewClient());
+            webView.getSettings().setLoadWithOverviewMode(true);
+            webView.getSettings().setUseWideViewPort(true);
+            webView.getSettings().setBuiltInZoomControls(true);
+            webView.getSettings().setDisplayZoomControls(false);
+            webView.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
+            webView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
+
+            webView.getSettings().setJavaScriptEnabled(true);
+            progressBar.setVisibility(View.VISIBLE);
+            webView.loadUrl(url);
+
+            webView.setWebViewClient(new WebViewClient() {
+
+                @Override
+                public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                    if (!Utils.checkInternetConnection(PortalFragment.this.getContext())) {
+                        Toast.makeText(PortalFragment.this.getContext(), "No Internet!", Toast.LENGTH_LONG).show();
+                    } else if (!url.contains("lekhpal.cfapps.io")) {
+                        startActivity(new Intent(Intent.ACTION_VIEW,request.getUrl()));
+                        return true;
+                    } else {
+                        view.loadUrl(url);
+                    }
+                    return true;
+                }
+
+                @Override
+                public void onPageFinished(WebView view, String url) {
+                    super.onPageFinished(view, url);
+                    progressBar.setVisibility(View.GONE);
+                }
+            });
             //webView.setWebChromeClient(new WebChromeClient());
 
-            this.webView.setOnKeyListener(new View.OnKeyListener() {
+            webView.setOnKeyListener(new View.OnKeyListener() {
                 @Override
                 public boolean onKey(View v, int keyCode, KeyEvent event) {
                     if ((keyCode == KeyEvent.KEYCODE_BACK) && webView.canGoBack()) {
@@ -119,6 +139,17 @@ public class LekhpalFragment extends Fragment {
         }
     }
 
+   /* @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof OnFragmentInteractionListener) {
+            mListener = (OnFragmentInteractionListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + " must implement OnFragmentInteractionListener");
+        }
+    }*/
+
     @Override
     public void onDetach() {
         super.onDetach();
@@ -138,31 +169,5 @@ public class LekhpalFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
-    }
-
-    private class CustomWebViewClient extends WebViewClient {
-        private CustomWebViewClient() {
-        }
-
-        public boolean shouldOverrideUrlLoading(WebView view, String url) {
-            if (!Utils.checkInternetConnection(LekhpalFragment.this.getContext())) {
-                Toast.makeText(LekhpalFragment.this.getContext(), "No Internet!", Toast.LENGTH_LONG).show();
-            } else if (url.endsWith(".pdf")) {
-                view.loadUrl("https://docs.google.com/viewer?url=" + url);
-            } else if (url.endsWith(".jpg") || url.endsWith(".jpeg")) {
-                Intent intent = new Intent("android.intent.action.VIEW");
-                intent.setData(Uri.parse(url));
-                LekhpalFragment.this.startActivity(intent);
-            } else {
-                view.loadUrl(url);
-            }
-            return true;
-        }
-
-        @Override
-        public void onPageFinished(WebView view, String url) {
-            super.onPageFinished(view, url);
-            progressBar.setVisibility(View.GONE);
-        }
     }
 }
