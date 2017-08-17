@@ -6,6 +6,20 @@
 
     <string name="action_settings">Settings</string>
 
+    <string name="lekhpal_sangh_button">Lekhpal Sangh</string>
+    <string name="lekhpal_search_button">Lekhpal Search</string>
+    <string name="village_search_button">Village Search</string>
+    <string name="mandal_search_button">Mandal</string>
+    <string name="district_search_button">District</string>
+    <string name="tahsil_search_button">Tahsil</string>
+    <string name="edistrict_button">eDistrict</string>
+    <string name="government_portal_button">Online Government Services</string>
+    <string name="lekhpal_portal_button">Lekhpal Portal</string>
+    <string name="lekhpal_sangh_news_button">Lekhpal Sangh News</string>
+    <string name="complain_button">Complain</string>
+    <string name="feedback_button">Feedback</string>
+    <string name="contact_button">Contacts</string>
+
 
     <string name="title_activity_second">Interstitial</string>
     <string name="interstitial_ad_sample">Watch more by clicking on next level</string>
@@ -19,12 +33,87 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="lekhpal_title"><h3>उत्तर प्रदेश लेखपाल संघ</h3></string>
-    <string name="lekhpal_message"><h4>Uttar pradesh Lekhpal Sangh is recognized by U. P. Government Letter No.-75 (i) 4 -II-A 359 dated November 14,1962. Now in present time the member of Uttar pradesh Lekhpal Sangh is 32237. The main work of lekhpal is land records related but now at this time the lekhpal has several works related to public welfare. This application gives the information about its member and union. This is also helpful for the public so that they can get proper information about revenue relate work and government GO. The important information about Uttar pradesh Lekhpal Sangh is also available in this site. The important Government orders and other public related information is also available on this site.</h4></string>
-    <string name="lekhpal_contact_us"><h3>श्री राम मूरत यादव  ( अध्यक्ष ) \n UTTAR PARDESH LEKHPAL SANGH \n \n श्री  ब्रजेश कुमार श्रीवास्तव ( महामंत्री )\n UTTAR PARDESH LEKHPAL SANGH \n \n \n \n \n Head Office- \n Aalam Bagh , Infront Of Road Ways Bus Station,\nSujan Pura , Om Nagar ,Lucknow  U.P \n\nEmail Id- mailto.lekhpalsangh@gmail.com</h3></string>
+    <string name="lekhpal_message"><h4>Uttar pradesh Lekhpal Sangh is recognized by U. P. Government Letter No.-75 (i) 4 -II-A 359 dated November 14,1962.\n\nThe main work of lekhpal is land records related but now at this time the lekhpal has several works related to public welfare. \nThis application gives the information about its member and union. This is also helpful for the public so that they can get proper information about revenue relate work and government GO. The important information about Uttar pradesh Lekhpal Sangh is also available in this portal. The important Government orders and other public related information is also available on this site.\n\n Please find our services below and provide your feedback and complains</h4></string>
+    <string name="lekhpal_contact_us"><h3>श्री राम मूरत यादव  ( अध्यक्ष ) \n उत्तर प्रदेश लेखपाल संघ \n \n श्री  ब्रजेश कुमार श्रीवास्तव ( महामंत्री )\n उत्तर प्रदेश लेखपाल संघ \n  \n Head Office : \n Aalam Bagh , Infront Of Road Ways Bus Station,\nSujan Pura , Om Nagar ,Lucknow  U.P \n\nEmails : -\n mailto.lekhpalsangh@gmail.com\n lekhpal.up@gmail.com \n netsolutionst@gmail.com</h3></string>
 
 
     <string name="enter_btn"><h3>Enter</h3></string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_web_view">WebViewActivity</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history
+    </string>
+
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_default_display_name">John Smith</string>
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+
+    <!-- Example settings for Data & Sync -->
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+
+    <string-array name="list_preference_entries">
+        <item>Entry 1</item>
+        <item>Entry 2</item>
+        <item>Entry 3</item>
+    </string-array>
+
+    <string-array name="list_preference_entry_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="multi_select_list_preference_default_value" />
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example settings for Notifications -->
+    <string name="pref_header_notifications">Notifications</string>
+
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
+    <string name="title_activity_notification">Notification</string>
 </resources>

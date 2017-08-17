@@ -1,6 +1,7 @@
 package in.co.lekhpal.lekhpalsangh;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -17,21 +18,24 @@ import android.view.Menu;
 
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private AdView mAdView;
-
     private boolean viewIsAtHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //FirebaseMessaging.getInstance().subscribeToTopic("NEWS");
 
         mAdView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().addTestDevice("E2912258481E0D5ABBF978C89EC1F085")
@@ -41,10 +45,22 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
+
+
         /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent Email = new Intent(Intent.ACTION_SEND);
+                Email.setType("text/email");
+                Email.putExtra(Intent.EXTRA_EMAIL,
+                        new String[]{"lekhpal.up@gmail.com","netsolutionst@gmail.com"});  //developer 's email
+                Email.putExtra(Intent.EXTRA_SUBJECT,
+                        "Lekhpal Sangh Feedback"); // Email 's Subject
+                Email.putExtra(Intent.EXTRA_TEXT, "Dear Lekhpal Sangh," + "");  //Email 's Greeting text
+                startActivity(Intent.createChooser(Email, "Send Feedback:"));
+
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
@@ -76,8 +92,7 @@ public class MainActivity extends AppCompatActivity
                     //.setIcon(android.R.drawable.ic_dialog_alert)
                     .setTitle("Exit!")
                     .setMessage("Are you sure you want to close?")
-                    .setPositiveButton("Yes", new DialogInterface.OnClickListener()
-                    {
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             finish();
@@ -105,6 +120,8 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            //Intent intent = new Intent(this, SettingsActivity.class);
+            //startActivity(intent);
             return true;
         }
 
@@ -160,6 +177,11 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.nav_portal:
                 fragment = new PortalFragment();
+                title = getString(R.string.lekhpal_title);
+                viewIsAtHome = false;
+                break;
+            case R.id.nav_facebook:
+                fragment = new FacebookFragment();
                 title = getString(R.string.lekhpal_title);
                 viewIsAtHome = false;
                 break;
