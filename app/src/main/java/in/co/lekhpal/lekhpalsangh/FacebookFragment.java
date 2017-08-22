@@ -3,10 +3,13 @@ package in.co.lekhpal.lekhpalsangh;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -35,6 +38,7 @@ public class FacebookFragment extends Fragment {
     private WebView webView;
     private View mContentView;
     private ProgressBar progressBar;
+    SwipeRefreshLayout swipeView;
     private String url = "https://www.facebook.com/uplekhpalsangh/";
 
 
@@ -76,6 +80,7 @@ public class FacebookFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         mContentView = inflater.inflate(R.layout.fragment_facebook, container, false);
+        swipeView = (SwipeRefreshLayout) mContentView.findViewById(R.id.swiperefresh);
 
         if (!Utils.checkInternetConnection(getContext())) {
             Toast.makeText(getContext(), "No Internet!", Toast.LENGTH_SHORT).show();
@@ -93,6 +98,24 @@ public class FacebookFragment extends Fragment {
             webView.getSettings().setJavaScriptEnabled(true);
             progressBar.setVisibility(View.VISIBLE);
             webView.loadUrl(url);
+            swipeView.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
+                @Override
+                public void onScrollChanged() {
+                    if (webView.getScrollY() == 0)
+                        swipeView.setEnabled(true);
+                    else
+                        swipeView.setEnabled(false);
+                }
+            });
+
+            swipeView.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+                @Override
+                public void onRefresh() {
+                    webView.reload();
+
+                }
+            });
+
 
             webView.setWebViewClient(new WebViewClient() {
 
@@ -104,6 +127,7 @@ public class FacebookFragment extends Fragment {
                 @Override
                 public void onPageFinished(WebView view, String url) {
                     super.onPageFinished(view, url);
+                    swipeView.setRefreshing(false);
                     progressBar.setVisibility(View.GONE);
                 }
             });

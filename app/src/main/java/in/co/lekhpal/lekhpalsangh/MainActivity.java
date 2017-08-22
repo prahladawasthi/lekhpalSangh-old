@@ -18,7 +18,6 @@ import android.view.Menu;
 
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -35,7 +34,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //FirebaseMessaging.getInstance().subscribeToTopic("NEWS");
+        FirebaseMessaging.getInstance().subscribeToTopic("NEWS");
 
         mAdView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().addTestDevice("E2912258481E0D5ABBF978C89EC1F085")
@@ -46,8 +45,6 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
 
-
-
         /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,13 +52,13 @@ public class MainActivity extends AppCompatActivity
                 Intent Email = new Intent(Intent.ACTION_SEND);
                 Email.setType("text/email");
                 Email.putExtra(Intent.EXTRA_EMAIL,
-                        new String[]{"lekhpal.up@gmail.com","netsolutionst@gmail.com"});  //developer 's email
+                        new String[]{"lekhpal.up@gmail.com", "netsolutionst@gmail.com"});  //developer 's email
                 Email.putExtra(Intent.EXTRA_SUBJECT,
                         "Lekhpal Sangh Feedback"); // Email 's Subject
                 Email.putExtra(Intent.EXTRA_TEXT, "Dear Lekhpal Sangh," + "");  //Email 's Greeting text
                 startActivity(Intent.createChooser(Email, "Send Feedback:"));
 
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Thanks for Contacting us !", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });*/

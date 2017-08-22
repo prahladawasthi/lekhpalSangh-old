@@ -14,24 +14,20 @@
             android:id="@+id/nav_portal"
             android:icon="@drawable/ic_menu_send"
             android:title="Lekhpal Portal" />
-        <item
-            android:id="@+id/nav_facebook"
-            android:icon="@drawable/ic_menu_send"
-            android:title="Facebook" />
-        <item
-            android:id="@+id/nav_contact"
-            android:icon="@drawable/ic_menu_send"
-            android:title="Contact Us" />
+
     </group>
 
-    <!--<item android:title="Communicate">
+    <item android:title="Communicate">
         <menu>
-           &lt;!&ndash; <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />&ndash;&gt;
+            <item
+                android:id="@+id/nav_facebook"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Facebook" />
+            <item
+                android:id="@+id/nav_contact"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Contact Us" />
 
         </menu>
-    </item>-->
-
+    </item>
 </menu>

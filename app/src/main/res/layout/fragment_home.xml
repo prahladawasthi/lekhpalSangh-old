@@ -46,149 +46,231 @@
 
         <TableRow>
 
-            <Button
+            <android.support.v7.widget.AppCompatButton
                 android:id="@+id/lekhpalSangh"
                 style="@style/Widget.AppCompat.Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:layout_marginRight="80dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/lekhpal_sangh_button"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:textColor="@color/common_google_signin_btn_text_dark"
+                android:textStyle="bold"
+                app:backgroundTint="@color/colorPrimary" />
         </TableRow>
 
 
         <TableRow>
 
-            <Button
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/khatauni"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:layout_marginRight="80dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/khatauni_button"
+                android:textAllCaps="false"
+                android:textColor="@color/common_google_signin_btn_text_dark"
+                android:textStyle="bold"
+                app:backgroundTint="@color/colorPrimary" />
+        </TableRow>
+
+        <TableRow>
+
+            <android.support.v7.widget.AppCompatButton
                 android:id="@+id/lekhpalSearch"
                 style="@style/Widget.AppCompat.Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:layout_marginRight="80dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/lekhpal_search_button"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:textColor="@color/common_google_signin_btn_text_dark"
+                android:textStyle="bold"
+                app:backgroundTint="@color/colorPrimary" />
         </TableRow>
 
         <TableRow>
 
-            <Button
+            <android.support.v7.widget.AppCompatButton
                 android:id="@+id/villageSearch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:layout_marginRight="80dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/village_search_button"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:textColor="@color/common_google_signin_btn_text_dark"
+                android:textStyle="bold"
+                app:backgroundTint="@color/colorPrimary" />
         </TableRow>
 
         <TableRow>
 
-            <Button
+            <android.support.v7.widget.AppCompatButton
                 android:id="@+id/mandal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:layout_marginRight="80dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/mandal_search_button"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:textColor="@color/common_google_signin_btn_text_dark"
+                android:textStyle="bold"
+                app:backgroundTint="@color/colorPrimary" />
         </TableRow>
 
         <TableRow>
 
-            <Button
+            <android.support.v7.widget.AppCompatButton
                 android:id="@+id/district"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:layout_marginRight="80dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/district_search_button"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:textColor="@color/common_google_signin_btn_text_dark"
+                android:textStyle="bold"
+                app:backgroundTint="@color/colorPrimary" />
         </TableRow>
 
         <TableRow>
 
-            <Button
+            <android.support.v7.widget.AppCompatButton
                 android:id="@+id/tahsil"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:layout_marginRight="80dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/tahsil_search_button"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:textColor="@color/common_google_signin_btn_text_dark"
+                android:textStyle="bold"
+                app:backgroundTint="@color/colorPrimary" />
         </TableRow>
 
         <TableRow>
 
-            <Button
+            <android.support.v7.widget.AppCompatButton
                 android:id="@+id/edistrict"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:layout_marginRight="80dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/edistrict_button"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:textColor="@color/common_google_signin_btn_text_dark"
+                android:textStyle="bold"
+                app:backgroundTint="@color/colorPrimary" />
         </TableRow>
 
         <TableRow>
 
-            <Button
+            <android.support.v7.widget.AppCompatButton
                 android:id="@+id/govPortal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:layout_marginRight="80dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/government_portal_button"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:textColor="@color/common_google_signin_btn_text_dark"
+                android:textStyle="bold"
+                app:backgroundTint="@color/colorPrimary" />
         </TableRow>
 
 
         <TableRow>
 
-            <Button
+            <android.support.v7.widget.AppCompatButton
                 android:id="@+id/lekhpalPortal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:layout_marginRight="80dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/lekhpal_portal_button"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:textColor="@color/common_google_signin_btn_text_dark"
+                android:textStyle="bold"
+                app:backgroundTint="@color/colorPrimary" />
         </TableRow>
 
         <TableRow>
 
-            <Button
+            <android.support.v7.widget.AppCompatButton
                 android:id="@+id/lekhpalNews"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:layout_marginRight="80dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/lekhpal_sangh_news_button"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:textColor="@color/common_google_signin_btn_text_dark"
+                android:textStyle="bold"
+                app:backgroundTint="@color/colorPrimary" />
         </TableRow>
 
         <TableRow>
 
-            <Button
+            <android.support.v7.widget.AppCompatButton
                 android:id="@+id/complain"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:layout_marginRight="80dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/complain_button"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:textColor="@color/common_google_signin_btn_text_dark"
+                android:textStyle="bold"
+                app:backgroundTint="@color/colorPrimary" />
         </TableRow>
 
         <TableRow>
 
-            <Button
+            <android.support.v7.widget.AppCompatButton
                 android:id="@+id/feedback"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:layout_marginRight="80dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/feedback_button"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:textColor="@color/common_google_signin_btn_text_dark"
+                android:textStyle="bold"
+                app:backgroundTint="@color/colorPrimary" />
         </TableRow>
 
         <TableRow>
 
-            <Button
+            <android.support.v7.widget.AppCompatButton
                 android:id="@+id/contact"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:layout_marginRight="80dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/contact_button"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:textColor="@color/common_google_signin_btn_text_dark"
+                android:textStyle="bold"
+                app:backgroundTint="@color/colorPrimary" />
         </TableRow>
 
         <TableRow>

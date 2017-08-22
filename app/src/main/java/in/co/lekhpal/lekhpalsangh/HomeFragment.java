@@ -68,6 +68,7 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         Button lekhpalSanghButton;
+        Button khatauniButton;
         Button lekhpalSearchButton;
         Button villageSearchButton;
         Button mandalButton;
@@ -96,6 +97,15 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        khatauniButton = ((Button) mContentView.findViewById(R.id.khatauni));
+        khatauniButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), WebViewActivity.class);
+                intent.putExtra("url", "http://upbhulekh.gov.in/public/public_ror/Public_ROR.jsp");
+                startActivity(intent);
+            }
+        });
 
         lekhpalSearchButton = ((Button) mContentView.findViewById(R.id.lekhpalSearch));
         lekhpalSearchButton.setOnClickListener(new View.OnClickListener() {
