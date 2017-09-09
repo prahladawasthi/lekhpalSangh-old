@@ -52,12 +52,12 @@
 
         <TableRow>
 
-            <Button
+           <!-- <Button
                 android:id="@+id/btn_fullscreen_ad"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="@string/title_activity_second" />
+                android:text="@string/title_activity_second" />-->
         </TableRow>
 
         <TableRow>

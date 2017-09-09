@@ -70,7 +70,7 @@ public class ContactFragment extends Fragment {
        // return inflater.inflate(R.layout.fragment_contact, container, false);
         View contactView = inflater.inflate(R.layout.fragment_contact, container, false);
 
-        btnFullscreenAd = (Button) contactView.findViewById(R.id.btn_fullscreen_ad);
+        /*btnFullscreenAd = (Button) contactView.findViewById(R.id.btn_fullscreen_ad);
         btnFullscreenAd.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -78,7 +78,7 @@ public class ContactFragment extends Fragment {
                 Intent intent = new Intent(getContext(), SecondActivity.class);
                 startActivity(intent);
             }
-        });
+        });*/
 
         return contactView;
     }

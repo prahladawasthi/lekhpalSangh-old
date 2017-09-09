@@ -10,12 +10,60 @@
             android:id="@+id/nav_lekhpal"
             android:icon="@drawable/ic_menu_send"
             android:title="Lekhpal Sangh" />
-        <item
-            android:id="@+id/nav_portal"
-            android:icon="@drawable/ic_menu_send"
-            android:title="Lekhpal Portal" />
+
 
     </group>
+    <item android:title="Lekhpal Portal">
+        <menu>
+            <item
+                android:id="@+id/nav_lekhpal_portal"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Lekhpal Portal" />
+            <item
+                android:id="@+id/nav_lekhpal_search"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Lekhpal Search" />
+            <item
+                android:id="@+id/nav_village_search"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Village Search" />
+            <item
+                android:id="@+id/nav_mandal"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Mandal" />
+            <item
+                android:id="@+id/nav_district"
+                android:icon="@drawable/ic_menu_send"
+                android:title="District" />
+            <item
+                android:id="@+id/nav_tahsil"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Tahsil" />
+            <item
+                android:id="@+id/nav_lekpal_feedback"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Feedback" />
+            <item
+                android:id="@+id/nav_lekpal_complain"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Complain" />
+
+        </menu>
+    </item>
+
+    <item android:title="Government Services">
+        <menu>
+            <item
+                android:id="@+id/nav_khatauni"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Khatauni" />
+            <item
+                android:id="@+id/nav_eDistrict"
+                android:icon="@drawable/ic_menu_send"
+                android:title="eDistrict" />
+
+        </menu>
+    </item>
 
     <item android:title="Communicate">
         <menu>
@@ -28,6 +76,10 @@
                 android:icon="@drawable/ic_menu_send"
                 android:title="Contact Us" />
 
+            <item />
+            <item />
+
         </menu>
     </item>
+
 </menu>

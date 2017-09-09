@@ -3,11 +3,16 @@ package in.co.lekhpal.lekhpalsangh;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 /**
@@ -19,6 +24,24 @@ import android.widget.Button;
  * create an instance of this fragment.
  */
 public class HomeFragment extends Fragment {
+
+    Button lekhpalSanghButton;
+    Button khatauniButton;
+    Button lekhpalSearchButton;
+    Button villageSearchButton;
+    Button mandalButton;
+    Button districtButton;
+    Button tahsilButton;
+    Button edistrictButton;
+    Button govButton;
+    Button lekhpalPortalButton;
+    Button lekhpalNewsButton;
+    Button complainButton;
+    Button feedbackButton;
+    Button contactButton;
+
+    ViewPager viewPager;
+
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -67,25 +90,14 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        Button lekhpalSanghButton;
-        Button khatauniButton;
-        Button lekhpalSearchButton;
-        Button villageSearchButton;
-        Button mandalButton;
-        Button districtButton;
-        Button tahsilButton;
-        Button edistrictButton;
-        Button govButton;
-        Button lekhpalPortalButton;
-        Button lekhpalNewsButton;
-        Button complainButton;
-        Button feedbackButton;
-        Button contactButton;
-
-
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_home, container, false);
         View mContentView = inflater.inflate(R.layout.fragment_home, container, false);
+
+       /* viewPager = (ViewPager) mContentView.findViewById(R.id.viewPager);
+        ViewPagerAdopter viewPagerAdopter = new ViewPagerAdopter(getContext());
+        viewPager.setAdapter(viewPagerAdopter);*/
+
 
         lekhpalSanghButton = ((Button) mContentView.findViewById(R.id.lekhpalSangh));
         lekhpalSanghButton.setOnClickListener(new View.OnClickListener() {

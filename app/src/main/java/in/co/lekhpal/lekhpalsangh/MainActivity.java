@@ -117,8 +117,8 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            //Intent intent = new Intent(this, SettingsActivity.class);
-            //startActivity(intent);
+            Intent intent = new Intent(this, SettingsActivity.class);
+            startActivity(intent);
             return true;
         }
 
@@ -157,7 +157,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void displayView(int viewId) {
-
+        Intent intent;
         Fragment fragment = null;
         String title = getString(R.string.app_name);
 
@@ -172,11 +172,77 @@ public class MainActivity extends AppCompatActivity
                 title = getString(R.string.lekhpal_title);
                 viewIsAtHome = false;
                 break;
-            case R.id.nav_portal:
-                fragment = new PortalFragment();
-                title = getString(R.string.lekhpal_title);
-                viewIsAtHome = false;
+
+
+            /*Lekhapal Portal START*/
+
+            case R.id.nav_lekhpal_portal:
+                intent = new Intent(getBaseContext(), WebViewActivity.class);
+                intent.putExtra("url", "https://lekhpal.cfapps.io/");
+                startActivity(intent);
                 break;
+
+            case R.id.nav_lekhpal_search:
+                intent = new Intent(getBaseContext(), WebViewActivity.class);
+                intent.putExtra("url", "https://lekhpal.cfapps.io/common/lekhpalSearch");
+                startActivity(intent);
+                break;
+
+            case R.id.nav_village_search:
+                intent = new Intent(getBaseContext(), WebViewActivity.class);
+                intent.putExtra("url", "https://lekhpal.cfapps.io/common/villageSearch");
+                startActivity(intent);
+                break;
+
+            case R.id.nav_mandal:
+                intent = new Intent(getBaseContext(), WebViewActivity.class);
+                intent.putExtra("url", "https://lekhpal.cfapps.io/mandal/");
+                startActivity(intent);
+                break;
+
+            case R.id.nav_district:
+                intent = new Intent(getBaseContext(), WebViewActivity.class);
+                intent.putExtra("url", "https://lekhpal.cfapps.io/district/");
+                startActivity(intent);
+                break;
+
+            case R.id.nav_tahsil:
+                intent = new Intent(getBaseContext(), WebViewActivity.class);
+                intent.putExtra("url", "https://lekhpal.cfapps.io/tahsil/");
+                startActivity(intent);
+                break;
+
+            case R.id.nav_lekpal_feedback:
+                intent = new Intent(getBaseContext(), WebViewActivity.class);
+                intent.putExtra("url", "https://lekhpal.cfapps.io/feedback/");
+                startActivity(intent);
+                break;
+
+            case R.id.nav_lekpal_complain:
+                intent = new Intent(getBaseContext(), WebViewActivity.class);
+                intent.putExtra("url", "https://lekhpal.cfapps.io/complain/");
+                startActivity(intent);
+                break;
+
+            /*Lekhapal Portal END*/
+
+            /*Government Services START*/
+
+            case R.id.nav_khatauni:
+                intent = new Intent(getBaseContext(), WebViewActivity.class);
+                intent.putExtra("url", "http://upbhulekh.gov.in/public/public_ror/Public_ROR.jsp");
+                startActivity(intent);
+                break;
+
+            case R.id.nav_eDistrict:
+                intent = new Intent(getBaseContext(), WebViewActivity.class);
+                intent.putExtra("url", "http://164.100.181.28/edistrict/login/login.aspx");
+                startActivity(intent);
+                break;
+
+
+            /*Government Services END*/
+
             case R.id.nav_facebook:
                 fragment = new FacebookFragment();
                 title = getString(R.string.lekhpal_title);

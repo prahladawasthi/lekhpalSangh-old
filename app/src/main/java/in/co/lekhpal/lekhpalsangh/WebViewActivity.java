@@ -23,17 +23,29 @@ import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+
 public class WebViewActivity extends AppCompatActivity {
 
     private WebView webView;
     private ProgressBar progressBar;
     String url;
     SwipeRefreshLayout swipeView;
+    private InterstitialAd mInterstitialAd;
+
+    private long lastTimeAdShown = System.currentTimeMillis();
+    private long lastTimeAdFail = System.currentTimeMillis();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web_view);
+
+        mInterstitialAd = newInterstitialAd();
+        loadInterstitial();
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -155,9 +167,67 @@ public class WebViewActivity extends AppCompatActivity {
                         webView.goBack();
                         return true;
                     }
+                    if (mInterstitialAd.isLoaded()) {
+                        long timestamp = System.currentTimeMillis();
+                        if (timestamp > lastTimeAdShown + 10 * 1000) {
+                            showInterstitial();
+                            lastTimeAdShown = timestamp;
+                        }
+                    } else {
+                        long timestamp = System.currentTimeMillis();
+                        if (timestamp > lastTimeAdFail + 10 * 1000) {
+                            loadInterstitial();
+                            lastTimeAdFail = timestamp;
+                        }
+                    }
                     return false;
                 }
             });
         }
+    }
+
+    private InterstitialAd newInterstitialAd() {
+        InterstitialAd interstitialAd = new InterstitialAd(this);
+        interstitialAd.setAdUnitId(getString(R.string.interstitial_ad_unit_id));
+        interstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+
+            }
+
+            @Override
+            public void onAdFailedToLoad(int errorCode) {
+                long timestamp = System.currentTimeMillis();
+                if(timestamp > lastTimeAdFail + 10*1000){
+                    loadInterstitial();
+                }
+            }
+
+            @Override
+            public void onAdClosed() {
+                goToNextLevel();
+            }
+        });
+        return interstitialAd;
+    }
+
+    private void showInterstitial() {
+        // Show the ad if it's ready. Otherwise toast and reload the ad.
+        if (mInterstitialAd != null && mInterstitialAd.isLoaded()) {
+            mInterstitialAd.show();
+        } else {
+            Toast.makeText(this, "Ad did not load", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void loadInterstitial() {
+        AdRequest adRequest = new AdRequest.Builder().addTestDevice("E2912258481E0D5ABBF978C89EC1F085")
+                .setRequestAgent("android_studio:ad_template").build();
+        mInterstitialAd.loadAd(adRequest);
+    }
+
+    private void goToNextLevel() {
+        mInterstitialAd = newInterstitialAd();
+        loadInterstitial();
     }
 }
