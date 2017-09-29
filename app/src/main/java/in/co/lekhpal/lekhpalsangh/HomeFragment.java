@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
@@ -25,23 +26,15 @@ import java.util.TimerTask;
  */
 public class HomeFragment extends Fragment {
 
+    Button chatButton;
     Button lekhpalSanghButton;
     Button khatauniButton;
-    Button lekhpalSearchButton;
-    Button villageSearchButton;
-    Button mandalButton;
-    Button districtButton;
-    Button tahsilButton;
     Button edistrictButton;
     Button govButton;
-    Button lekhpalPortalButton;
     Button lekhpalNewsButton;
-    Button complainButton;
-    Button feedbackButton;
     Button contactButton;
 
     ViewPager viewPager;
-
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -94,9 +87,14 @@ public class HomeFragment extends Fragment {
         //return inflater.inflate(R.layout.fragment_home, container, false);
         View mContentView = inflater.inflate(R.layout.fragment_home, container, false);
 
-       /* viewPager = (ViewPager) mContentView.findViewById(R.id.viewPager);
-        ViewPagerAdopter viewPagerAdopter = new ViewPagerAdopter(getContext());
-        viewPager.setAdapter(viewPagerAdopter);*/
+       /* chatButton = ((Button) mContentView.findViewById(R.id.chat));
+        chatButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), ChatActivity.class);
+                startActivity(intent);
+            }
+        });*/
 
 
         lekhpalSanghButton = ((Button) mContentView.findViewById(R.id.lekhpalSangh));
@@ -119,56 +117,6 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        lekhpalSearchButton = ((Button) mContentView.findViewById(R.id.lekhpalSearch));
-        lekhpalSearchButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getContext(), WebViewActivity.class);
-                intent.putExtra("url", "https://lekhpal.cfapps.io/common/lekhpalSearch");
-                startActivity(intent);
-            }
-        });
-
-        villageSearchButton = ((Button) mContentView.findViewById(R.id.villageSearch));
-        villageSearchButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getContext(), WebViewActivity.class);
-                intent.putExtra("url", "https://lekhpal.cfapps.io/common/villageSearch");
-                startActivity(intent);
-            }
-        });
-
-
-        mandalButton = ((Button) mContentView.findViewById(R.id.mandal));
-        mandalButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getContext(), WebViewActivity.class);
-                intent.putExtra("url", "https://lekhpal.cfapps.io/mandal/");
-                startActivity(intent);
-            }
-        });
-
-        districtButton = ((Button) mContentView.findViewById(R.id.district));
-        districtButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getContext(), WebViewActivity.class);
-                intent.putExtra("url", "https://lekhpal.cfapps.io/district/");
-                startActivity(intent);
-            }
-        });
-
-        tahsilButton = ((Button) mContentView.findViewById(R.id.tahsil));
-        tahsilButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getContext(), WebViewActivity.class);
-                intent.putExtra("url", "https://lekhpal.cfapps.io/tahsil/");
-                startActivity(intent);
-            }
-        });
         edistrictButton = ((Button) mContentView.findViewById(R.id.edistrict));
         edistrictButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -189,42 +137,12 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        lekhpalPortalButton = ((Button) mContentView.findViewById(R.id.lekhpalPortal));
-        lekhpalPortalButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getContext(), WebViewActivity.class);
-                intent.putExtra("url", "https://lekhpal.cfapps.io/");
-                startActivity(intent);
-            }
-        });
-
         lekhpalNewsButton = ((Button) mContentView.findViewById(R.id.lekhpalNews));
         lekhpalNewsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(), WebViewActivity.class);
                 intent.putExtra("url", "http://lekhpalnews.blogspot.in/");
-                startActivity(intent);
-            }
-        });
-
-        complainButton = ((Button) mContentView.findViewById(R.id.complain));
-        complainButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getContext(), WebViewActivity.class);
-                intent.putExtra("url", "https://lekhpal.cfapps.io/complain/");
-                startActivity(intent);
-            }
-        });
-
-        feedbackButton = ((Button) mContentView.findViewById(R.id.feedback));
-        feedbackButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getContext(), WebViewActivity.class);
-                intent.putExtra("url", "https://lekhpal.cfapps.io/feedback/");
                 startActivity(intent);
             }
         });

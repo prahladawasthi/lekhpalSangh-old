@@ -173,59 +173,6 @@ public class MainActivity extends AppCompatActivity
                 viewIsAtHome = false;
                 break;
 
-
-            /*Lekhapal Portal START*/
-
-            case R.id.nav_lekhpal_portal:
-                intent = new Intent(getBaseContext(), WebViewActivity.class);
-                intent.putExtra("url", "https://lekhpal.cfapps.io/");
-                startActivity(intent);
-                break;
-
-            case R.id.nav_lekhpal_search:
-                intent = new Intent(getBaseContext(), WebViewActivity.class);
-                intent.putExtra("url", "https://lekhpal.cfapps.io/common/lekhpalSearch");
-                startActivity(intent);
-                break;
-
-            case R.id.nav_village_search:
-                intent = new Intent(getBaseContext(), WebViewActivity.class);
-                intent.putExtra("url", "https://lekhpal.cfapps.io/common/villageSearch");
-                startActivity(intent);
-                break;
-
-            case R.id.nav_mandal:
-                intent = new Intent(getBaseContext(), WebViewActivity.class);
-                intent.putExtra("url", "https://lekhpal.cfapps.io/mandal/");
-                startActivity(intent);
-                break;
-
-            case R.id.nav_district:
-                intent = new Intent(getBaseContext(), WebViewActivity.class);
-                intent.putExtra("url", "https://lekhpal.cfapps.io/district/");
-                startActivity(intent);
-                break;
-
-            case R.id.nav_tahsil:
-                intent = new Intent(getBaseContext(), WebViewActivity.class);
-                intent.putExtra("url", "https://lekhpal.cfapps.io/tahsil/");
-                startActivity(intent);
-                break;
-
-            case R.id.nav_lekpal_feedback:
-                intent = new Intent(getBaseContext(), WebViewActivity.class);
-                intent.putExtra("url", "https://lekhpal.cfapps.io/feedback/");
-                startActivity(intent);
-                break;
-
-            case R.id.nav_lekpal_complain:
-                intent = new Intent(getBaseContext(), WebViewActivity.class);
-                intent.putExtra("url", "https://lekhpal.cfapps.io/complain/");
-                startActivity(intent);
-                break;
-
-            /*Lekhapal Portal END*/
-
             /*Government Services START*/
 
             case R.id.nav_khatauni:

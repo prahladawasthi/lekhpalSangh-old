@@ -13,43 +13,7 @@
 
 
     </group>
-    <item android:title="Lekhpal Portal">
-        <menu>
-            <item
-                android:id="@+id/nav_lekhpal_portal"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Lekhpal Portal" />
-            <item
-                android:id="@+id/nav_lekhpal_search"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Lekhpal Search" />
-            <item
-                android:id="@+id/nav_village_search"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Village Search" />
-            <item
-                android:id="@+id/nav_mandal"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Mandal" />
-            <item
-                android:id="@+id/nav_district"
-                android:icon="@drawable/ic_menu_send"
-                android:title="District" />
-            <item
-                android:id="@+id/nav_tahsil"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Tahsil" />
-            <item
-                android:id="@+id/nav_lekpal_feedback"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Feedback" />
-            <item
-                android:id="@+id/nav_lekpal_complain"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Complain" />
 
-        </menu>
-    </item>
 
     <item android:title="Government Services">
         <menu>

@@ -8,17 +8,9 @@
 
     <string name="lekhpal_sangh_button">Lekhpal Sangh</string>
     <string name="khatauni_button">Khatauni</string>
-    <string name="lekhpal_search_button">Lekhpal Search</string>
-    <string name="village_search_button">Village Search</string>
-    <string name="mandal_search_button">Mandal</string>
-    <string name="district_search_button">District</string>
-    <string name="tahsil_search_button">Tahsil</string>
     <string name="edistrict_button">eDistrict</string>
     <string name="government_portal_button">Online Government Services</string>
-    <string name="lekhpal_portal_button">Lekhpal Portal</string>
     <string name="lekhpal_sangh_news_button">Lekhpal Sangh News</string>
-    <string name="complain_button">Complain</string>
-    <string name="feedback_button">Feedback</string>
     <string name="contact_button">Contacts</string>
 
 
@@ -34,7 +26,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="lekhpal_title"><h3>उत्तर प्रदेश लेखपाल संघ</h3></string>
-    <string name="lekhpal_message"><h4>Uttar pradesh Lekhpal Sangh is recognized by U. P. Government Letter No.-75 (i) 4 -II-A 359 dated November 14,1962.\n\nThe main work of lekhpal is land records related but now lekhpal also has several other works related to public welfare. \nThis application gives the information about its member and union. This is also helpful for the public so that they can get proper information about revenue relate work and government . The important information about Uttar pradesh Lekhpal Sangh is also available in this portal. The important Government orders and other public related information is also available on this portal.\n \n Please find our services below and provide your feedback and complains</h4></string>
+    <string name="lekhpal_message"><h4>This application gives the information about its member and union. This is also helpful for the public so that they can get proper information about revenue relate work and government . The important information about Uttar pradesh Lekhpal Sangh is also available in this portal. The important Government orders and other public related information is also available on this portal.</h4></string>
     <string name="lekhpal_contact_us"><h3>श्री राम मूरत यादव  ( अध्यक्ष ) \n उत्तर प्रदेश लेखपाल संघ \n \n श्री  ब्रजेश कुमार श्रीवास्तव ( महामंत्री )\n उत्तर प्रदेश लेखपाल संघ \n  \n Head Office : \n Aalam Bagh , Infront Of Road Ways Bus Station,\nSujan Pura , Om Nagar ,Lucknow  U.P \n\nEmails : -\n mailto.lekhpalsangh@gmail.com\n lekhpal.up@gmail.com \n netsolutionst@gmail.com</h3></string>
 
 
