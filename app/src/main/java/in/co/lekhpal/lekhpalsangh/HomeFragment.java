@@ -27,6 +27,7 @@ import java.util.TimerTask;
 public class HomeFragment extends Fragment {
 
     Button chatButton;
+    Button profileButton;
     Button lekhpalSanghButton;
     Button khatauniButton;
     Button edistrictButton;
@@ -87,15 +88,23 @@ public class HomeFragment extends Fragment {
         //return inflater.inflate(R.layout.fragment_home, container, false);
         View mContentView = inflater.inflate(R.layout.fragment_home, container, false);
 
-       /* chatButton = ((Button) mContentView.findViewById(R.id.chat));
+        chatButton = ((Button) mContentView.findViewById(R.id.chat));
         chatButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(), ChatActivity.class);
                 startActivity(intent);
             }
-        });*/
+        });
 
+        profileButton = ((Button) mContentView.findViewById(R.id.profile));
+        profileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
 
         lekhpalSanghButton = ((Button) mContentView.findViewById(R.id.lekhpalSangh));
         lekhpalSanghButton.setOnClickListener(new View.OnClickListener() {

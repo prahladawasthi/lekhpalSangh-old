@@ -3,9 +3,7 @@ package in.co.lekhpal.lekhpalsangh;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
@@ -15,9 +13,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-
 import android.view.MenuItem;
-import android.view.View;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -86,13 +82,14 @@ public class MainActivity extends AppCompatActivity
             displayView(R.id.nav_home); //display the News fragment
         } else {
             new AlertDialog.Builder(this)
-                    //.setIcon(android.R.drawable.ic_dialog_alert)
+                    .setIcon(android.R.drawable.ic_dialog_alert)
                     .setTitle("Exit!")
                     .setMessage("Are you sure you want to close?")
                     .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             finish();
+                            System.exit(0);
                         }
 
                     })
@@ -162,6 +159,8 @@ public class MainActivity extends AppCompatActivity
         String title = getString(R.string.app_name);
 
         switch (viewId) {
+
+
             case R.id.nav_home:
                 fragment = new HomeFragment();
                 title = getString(R.string.lekhpal_title);
@@ -199,6 +198,16 @@ public class MainActivity extends AppCompatActivity
                 fragment = new ContactFragment();
                 title = getString(R.string.lekhpal_title);
                 viewIsAtHome = false;
+                break;
+            case R.id.nav_profile:
+                intent = new Intent(getBaseContext(), ProfileActivity.class);
+                title = getString(R.string.title_activity_profile);
+                startActivity(intent);
+                break;
+            case R.id.nav_chat:
+                intent = new Intent(getBaseContext(), ChatActivity.class);
+                title = getString(R.string.title_activity_chat);
+                startActivity(intent);
                 break;
         }
 

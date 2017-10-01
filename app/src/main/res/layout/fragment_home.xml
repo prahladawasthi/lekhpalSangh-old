@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     tools:context="in.co.lekhpal.lekhpalsangh.HomeFragment">
 
+
     <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -49,12 +50,24 @@
         <TableRow>
 
             <Button
+                android:id="@+id/profile"
+                style="@style/button_text"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button"
+                android:text="Profile"
+                android:textAllCaps="false" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
                 android:id="@+id/chat"
                 style="@style/button_text"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/button"
-                android:text="Chat"
+                android:text="Group Chat"
                 android:textAllCaps="false" />
         </TableRow>
 
